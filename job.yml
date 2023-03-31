@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sample
+spec:
+  template:
+    spec:
+      containers:
+      - name: sample
+        image: localhost:32000/job-image:latest
+      restartPolicy: Never
+  backoffLimit: 4
